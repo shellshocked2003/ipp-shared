@@ -2,7 +2,7 @@
 
 | Bintray | Windows | Linux & macOS |
 |:--------:|:---------:|:-----------------:|
-|[ ![Download](https://api.bintray.com/packages/nheri-simcenter/simcenter/mkl-shared%3Asimcenter/images/download.svg) ](https://bintray.com/nheri-simcenter/simcenter/mkl-shared%3Asimcenter/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/0qhdm4ewjih23lb2?svg=true)](https://ci.appveyor.com/project/shellshocked2003/ipp-shared)|[![Build Status](https://travis-ci.org/shellshocked2003/ipp-shared.svg?branch=stable%2F2019.4)](https://travis-ci.org/shellshocked2003/ipp-shared)|
+|[ ![Download](https://api.bintray.com/packages/nheri-simcenter/simcenter/ipp-shared%3Asimcenter/images/download.svg) ](https://bintray.com/nheri-simcenter/simcenter/ipp-shared%3Asimcenter/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/0qhdm4ewjih23lb2?svg=true)](https://ci.appveyor.com/project/shellshocked2003/ipp-shared)|[![Build Status](https://travis-ci.org/shellshocked2003/ipp-shared.svg?branch=stable%2F2019.4)](https://travis-ci.org/shellshocked2003/ipp-shared)|
 
 ## Conan Information
 
