@@ -7,7 +7,7 @@ class mklDynamic(ConanFile):
     homepage = "https://anaconda.org/anaconda/ipp"
     author = "Michael Gardner <mhgardner@berkeley.edu>"
     license = "Intel Simplified Software License"
-    settings = {"os": None, "compiler": None, "build_type": None, "arch": ["x86_64"]}
+    settings = {"os": None, "arch": ["x86_64"]}
     description = "Intel Integrated Performance Primitives Shared Libraries"
     exports_sources = ["CMakeLists.txt"]
     generators = "cmake"
