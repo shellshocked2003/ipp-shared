@@ -39,3 +39,5 @@ class mklDynamic(ConanFile):
         
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
+        self.cpp_info.libdirs = ['lib']  # Directories where libraries can be found
+        self.cpp_info.bindirs = ['bin', 'lib']  # Directories where executables and shared libs can be found        
