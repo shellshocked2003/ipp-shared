@@ -36,7 +36,10 @@ class mklDynamic(ConanFile):
 
     def package(self):
         self.copy("LICENSE.txt", dst="licenses", src=self._source_subfolder + "/info")
-        self.copy("*", dst="lib", src=self._source_subfolder + "/lib")
+        if self.settings.os == "Windows":
+            self.copy("*", dst="lib", src=self._source_subfolder + "/Library/lib")
+        else:
+            self.copy("*", dst="lib", src=self._source_subfolder + "/lib")
         
     def package_info(self):
         self.cpp_info.libs = tools.collect_libs(self)
