@@ -25,7 +25,7 @@ class mklDynamic(ConanFile):
     
     def build(self):
         if self.settings.os == "Windows":
-            url = ("https://anaconda.org/intel/ipp/2019.4/download/win-64/ipp-2019.4-intel_245.tar.bz2")
+            url = ("https://anaconda.org/intel/ipp-devel/2019.4/download/win-64/ipp-devel-2019.4-intel_245.tar.bz2")
         elif self.settings.os == "Macos":
             url = ("https://anaconda.org/intel/ipp/2019.4/download/osx-64/ipp-2019.4-intel_233.tar.bz2")
         elif self.settings.os == "Linux":
