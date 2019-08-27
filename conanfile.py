@@ -46,5 +46,6 @@ class mklDynamic(ConanFile):
         self.cpp_info.libdirs = ['lib']  # Directories where libraries can be found
         self.cpp_info.bindirs = ['bin', 'lib']  # Directories where executables and shared libs can be found
         self.env_info.PATH.append(os.path.join(self.package_folder, "bin"))
+        self.env_info.PATH.append(os.path.join(self.package_folder, "lib"))        
         self.env_info.LD_LIBRARY_PATH.append(os.path.join(self.package_folder, "lib"))
         self.env_info.DYLD_LIBRARY_PATH.append(os.path.join(self.package_folder, "lib"))        
