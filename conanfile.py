@@ -26,6 +26,8 @@ class mklDynamic(ConanFile):
     def build(self):
         if self.settings.os == "Windows":
             url = ("https://anaconda.org/intel/ipp-devel/2019.4/download/win-64/ipp-devel-2019.4-intel_245.tar.bz2")
+            bin_url = ("https://anaconda.org/intel/ipp/2019.4/download/win-64/ipp-2019.4-intel_245.tar.bz2")
+            tools.get(bin_url, destination=self._source_subfolder)
         elif self.settings.os == "Macos":
             url = ("https://anaconda.org/intel/ipp/2019.4/download/osx-64/ipp-2019.4-intel_233.tar.bz2")
         elif self.settings.os == "Linux":
@@ -38,6 +40,7 @@ class mklDynamic(ConanFile):
         self.copy("LICENSE.txt", dst="licenses", src=self._source_subfolder + "/info")
         if self.settings.os == "Windows":
             self.copy("*", dst="lib", src=self._source_subfolder + "/Library/lib")
+            self.copy("*", dst="bin", src=self._source_subfolder + "/Library/bin")
         else:
             self.copy("*", dst="lib", src=self._source_subfolder + "/lib")
         
