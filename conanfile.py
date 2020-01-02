@@ -9,6 +9,8 @@ class mklDynamic(ConanFile):
     author = "Michael Gardner <mhgardner@berkeley.edu>"
     license = "Intel Simplified Software License"
     settings = {"os": None, "arch": ["x86_64"]}
+    options = {"signal_and_vector_math" : [True, False]}
+    default_options = {"signal_and_vector_math": False}    
     description = "Intel Integrated Performance Primitives Shared Libraries"
     exports_sources = ["CMakeLists.txt"]
     generators = "cmake"
@@ -45,7 +47,14 @@ class mklDynamic(ConanFile):
             self.copy("*", dst="lib", src=self._source_subfolder + "/lib")
         
     def package_info(self):
-        self.cpp_info.libs = tools.collect_libs(self)
+        if "signal_and_vector_math" in self.options is False:
+            self.cpp_info.libs = tools.collect_libs(self)            
+        else :
+            if self.settings.os == "Windows":
+                self.cpp_info.libs = ["ippsmt", "ippvmmt", "ippcoremt"]
+            else:
+                self.cpp_info.libs = ["ipps", "ippvm", "ippcore"]
+            
         self.cpp_info.libdirs = ['lib']  # Directories where libraries can be found
         self.cpp_info.bindirs = ['bin', 'lib']  # Directories where executables and shared libs can be found
         self.env_info.PATH.append(os.path.join(self.package_folder, "bin"))
